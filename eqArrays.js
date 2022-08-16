@@ -10,23 +10,21 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(arrayA, arrayB) {
-  if(arrayA.length === arrayB.length) {
-    for(let i = 0; i < arrayA.length; i++) {
-      if (arrayA[i] !== arrayB[i]) {
-        return false;
-      }
-    }
-  } else {
+  if (arrayA.length !== arrayB.length) {
     return false;
+  }
+  for (let i = 0; i < arrayA.length; i++) {
+    if (arrayA[i] !== arrayB[i]) {
+      return false;
+    }
   }
   return true;
 };
 
 
-
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
-// assertEqual(eqArrays([1, 2, 3], [1, 2, "3"]), false);
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3, 4]), false);
-// assertEqual(eqArrays([1, 1, 3], [1, true, 3]), false);
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
+assertEqual(eqArrays([1, 2, 3], [1, 2, "3"]), false);
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3, 4]), false);
+assertEqual(eqArrays([1, 1, 3], [1, true, 3]), false);
