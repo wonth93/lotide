@@ -1,24 +1,27 @@
-const correctEmoji = String.fromCodePoint(0x2705);
-const wrongEmoji = String.fromCodePoint(0x274C);
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`${correctEmoji}${correctEmoji}${correctEmoji} Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`${wrongEmoji}${wrongEmoji}${wrongEmoji} Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-const eqArrays = function(arrayA, arrayB) {
-  if (arrayA.length !== arrayB.length) {
-    return false;
-  }
-  for (let i = 0; i < arrayA.length; i++) {
-    if (arrayA[i] !== arrayB[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+// const correctEmoji = String.fromCodePoint(0x2705);
+// const wrongEmoji = String.fromCodePoint(0x274C);
+
+// const assertEqual = function(actual, expected) {
+//   if (actual === expected) {
+//     console.log(`${correctEmoji}${correctEmoji}${correctEmoji} Assertion Passed: ${actual} === ${expected}`);
+//   } else if (actual !== expected) {
+//     console.log(`${wrongEmoji}${wrongEmoji}${wrongEmoji} Assertion Failed: ${actual} !== ${expected}`);
+//   }
+// };
+// const eqArrays = function(arrayA, arrayB) {
+//   if (arrayA.length !== arrayB.length) {
+//     return false;
+//   }
+//   for (let i = 0; i < arrayA.length; i++) {
+//     if (arrayA[i] !== arrayB[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
 
 const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {
@@ -55,3 +58,5 @@ const eqObjects = function(object1, object2) {
 // const cd2 = { c: "1", d: ["2", 3, 4] };
 // assertEqual(eqObjects(cd, cd2), false);
 // console.log(eqObjects(cd, cd2))
+
+module.exports = eqObjects;
