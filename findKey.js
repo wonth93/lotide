@@ -1,16 +1,5 @@
 const assertEqual = require('./assertEqual');
 
-// const correctEmoji = String.fromCodePoint(0x2705);
-// const wrongEmoji = String.fromCodePoint(0x274C);
-
-// const assertEqual = function(actual, expected) {
-//   if (actual === expected) {
-//     console.log(`${correctEmoji}${correctEmoji}${correctEmoji} Assertion Passed: ${actual} === ${expected}`);
-//   } else if (actual !== expected) {
-//     console.log(`${wrongEmoji}${wrongEmoji}${wrongEmoji} Assertion Failed: ${actual} !== ${expected}`);
-//   }
-// };
-
 const findKey = function(object, callback) {
   for (const key in object) {
     if (callback(object[key])) {
@@ -39,4 +28,4 @@ const findKey = function(object, callback) {
 //   "Akelarre":  { stars: 3 }
 // }, x => x.stars === 2), "noma");
 
-module.exports = findKey;
+// module.exports = findKey;
