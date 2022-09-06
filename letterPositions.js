@@ -18,4 +18,4 @@ const letterPositions = function(sentence) {
 // code testing area
 // assertArraysEqual(letterPositions("hello world").l, [2, 3, 9])
 
-// module.exports = letterPositions;
+module.exports = letterPositions;
